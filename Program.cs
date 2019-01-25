@@ -16,7 +16,7 @@ namespace debugws
 
         if (pivot > 1)
         {
-          Quick_Sort(arr, left, pivot - 2);
+          Quick_Sort(arr, left, pivot - 1); //subtract 1
         }
 
         if (pivot + 1 < right)
@@ -35,7 +35,7 @@ namespace debugws
 
         while (arr[left] < pivot)
         {
-          left += 2;
+          left ++; //increment by 1 only
         }
 
         while (arr[right] > pivot)
@@ -50,9 +50,9 @@ namespace debugws
             return right;
           }
 
-          int temp = arr[left];
-          arr[right] = temp;
+          int temp = arr[left]; //swapped values and temp
           arr[left] = arr[right];
+                    arr[right] = temp;
         }
         else
         {
@@ -73,6 +73,7 @@ namespace debugws
       }
 
       Console.WriteLine();
+       
 
       Quick_Sort(arr, 0, arr.Length - 1);
 
@@ -85,6 +86,7 @@ namespace debugws
       }
 
       Console.WriteLine();
+            Console.ReadLine();
     }
   }
 }
